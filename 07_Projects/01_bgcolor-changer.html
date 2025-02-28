@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background color changer</title>
+  </head>
+  <style>
+    .theme {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .color {
+      display: flex;
+      gap: 1rem;
+    }
+
+    h1 {
+      padding-top: 4rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    #purple {
+      border: 1px solid black;
+      padding: 3rem 4rem;
+      border-radius: 0.4rem;
+      background-color: purple;
+    }
+
+    #blue {
+      border: 1px solid black;
+      padding: 3rem 4rem;
+      border-radius: 0.4rem;
+      background-color: rgb(19, 3, 162);
+    }
+
+    #green {
+      border: 1px solid black;
+      padding: 3rem 4rem;
+      border-radius: 0.4rem;
+      background-color: rgb(16, 116, 19);
+    }
+
+    #yellow {
+      border: 1px solid black;
+      border-radius: 0.4rem;
+      padding: 3rem 4rem;
+      background-color: rgb(255, 234, 7);
+    }
+  </style>
+
+  <body>
+    <div class="theme">
+      <h1>Pick your color</h1>
+      <div class="color">
+        <span class="button" id="purple"></span>
+        <span class="button" id="blue"></span>
+        <span class="button" id="green"></span>
+        <span class="button" id="yellow"></span>
+      </div>
+      <p>
+        Try clicking on one of the colors above to change background color of
+        this page!
+      </p>
+    </div>
+
+    <script>
+      const buttons = document.querySelectorAll(".button");
+      const body = document.querySelector("body");
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function (e) {
+          body.style.backgroundColor = e.target.id;
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
